@@ -1,6 +1,6 @@
 # Java Backend Developer — Portfolio
 
-Trang portfolio tĩnh (HTML + Tailwind CDN + JS thuần), không cần build, deploy thẳng lên GitHub Pages.
+Trang portfolio tĩnh (HTML + CSS + JS thuần, không framework), không cần build, deploy thẳng lên GitHub Pages.
 
 ## Cấu trúc
 
@@ -22,6 +22,7 @@ Mở `index.html`, tìm các comment `HERO SECTION`, `ABOUT ME`, `CORE TECHNICAL
 - `you@example.com`, `+84 900 000 000`, `your-username`, `your-profile` → thông tin liên hệ
 - Số liệu trong khối About (`5+ yrs`, `3k TPS`...) và các dự án → số liệu thật
 - Thêm dự án: copy một khối `<article class="project">…</article>`
+- Sửa CSS xong thì tăng số `?v=` ở thẻ `<link ... styles.css?v=3>` trong `index.html` (vd. `v=4`) để trình duyệt tải file mới thay vì dùng bản cũ.
 - Thuộc tính `download="YourName_Java_Backend_CV.pdf"` trên nút Download CV → tên file khi tải về
 
 ## Cập nhật CV
