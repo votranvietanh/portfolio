@@ -155,6 +155,77 @@ html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
 }
 .project-points strong { color: var(--text-strong); font-weight: 600; }
 
+/* ---------- Experience timeline (vertical tree) ---------- */
+.timeline {
+  position: relative;
+  margin-left: 0.5rem;
+  padding-left: 1.75rem;
+  border-left: 2px solid var(--border);
+}
+.tl-item { position: relative; padding-bottom: 3rem; }
+.tl-item:last-child { padding-bottom: 0; }
+
+/* company node on the line */
+.tl-dot {
+  position: absolute;
+  left: calc(-1.75rem - 8px);   /* center a 14px dot on the 2px line */
+  top: 0.35rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--surface);
+  border: 3px solid var(--accent);
+}
+.tl-dot--current { background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.tl-dot--edu { border-color: var(--text-muted); }
+
+.tl-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin-bottom: 1rem;
+}
+.tl-company { font-size: 1.25rem; font-weight: 700; color: var(--text-strong); letter-spacing: -0.01em; }
+.tl-period {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  background: var(--accent-soft);
+  white-space: nowrap;
+}
+
+/* projects = branches of the company node */
+.tl-projects { display: grid; gap: 1rem; }
+.tl-project {
+  position: relative;
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  transition: border-color .2s;
+}
+.tl-project:hover { border-color: var(--accent); }
+/* small horizontal branch from the main line to each project card */
+.tl-project::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.75rem - 1px);
+  top: 1.6rem;
+  width: 1.75rem;
+  border-top: 2px solid var(--border);
+}
+.tl-project .project-role { margin-bottom: 0.875rem; }
+
+@media (min-width: 640px) {
+  .timeline { margin-left: 0.75rem; padding-left: 2.25rem; }
+  .tl-dot { left: calc(-2.25rem - 8px); }
+  .tl-project::before { left: calc(-2.25rem - 1px); width: 2.25rem; }
+}
+
 /* ---------- Contact ---------- */
 .contact-item {
   display: flex;

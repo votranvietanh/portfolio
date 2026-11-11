@@ -7,7 +7,7 @@ Trang portfolio tĩnh (HTML + Tailwind CDN + JS thuần), không cần build, de
 ```
 portfolio/
 ├── index.html            # Toàn bộ nội dung (mỗi section có comment)
-├── cv.pdf                # CV mẫu — thay bằng CV thật (giữ nguyên tên file)
+├── cv.pdf                # CV (thay file này khi cập nhật, giữ nguyên tên)
 ├── .nojekyll             # Báo GitHub Pages không chạy Jekyll
 └── assets/
     ├── css/styles.css    # Style component (card, project, tag...) + màu Light/Dark
@@ -23,6 +23,25 @@ Mở `index.html`, tìm các comment `HERO SECTION`, `ABOUT ME`, `CORE TECHNICAL
 - Số liệu trong khối About (`5+ yrs`, `3k TPS`...) và các dự án → số liệu thật
 - Thêm dự án: copy một khối `<article class="project">…</article>`
 - Thuộc tính `download="YourName_Java_Backend_CV.pdf"` trên nút Download CV → tên file khi tải về
+
+## Cập nhật CV
+
+1. Chép file CV mới đè lên `cv.pdf` trong thư mục này (**giữ nguyên tên `cv.pdf`**).
+2. Đẩy lên GitHub:
+
+   ```bash
+   git add cv.pdf
+   git commit -m "Update CV"
+   git push
+   ```
+
+3. Đợi ~1 phút để GitHub Pages build lại. Nếu vẫn tải về bản cũ thì do trình duyệt đang cache: nhấn `Ctrl + F5` hoặc thử cửa sổ ẩn danh.
+
+## Thêm công ty / dự án vào timeline
+
+Trong `index.html`, phần `EXPERIENCE TIMELINE`:
+- Thêm công ty: copy một khối `<li class="tl-item">…</li>` (mới nhất đặt trên cùng; công ty hiện tại dùng `tl-dot--current`).
+- Thêm dự án trong một công ty: copy một khối `<article class="tl-project">…</article>`.
 
 ## Chạy thử local
 
