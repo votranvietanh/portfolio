@@ -29,7 +29,7 @@
   </script>
 
   <!-- All styles are local. Bump ?v= after editing the CSS so browsers fetch the new file. -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=3" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=5" />
 </head>
 
 <body>
@@ -140,9 +140,12 @@
     </section>
 
     <!-- =========================================================
-         EXPERIENCE TIMELINE (newest on top)
-           <li class="tl-item">     -> one company (dot on the line)
-           <div class="tl-project"> -> one project inside it
+         EXPERIENCE TIMELINE — tree with branches on both sides
+         Newest on top. Items alternate left/right automatically
+         (on mobile they all sit on the right of the line).
+           <li class="tl-item">      -> one milestone (company / school)
+             <div class="tl-project"> -> one project: title, icons, ONE line summary
+         Full details live in the CV.
          Stack icons: <img src="assets/icons/NAME.svg" alt="Name" title="Name" width="20" height="20" />
          ========================================================= -->
     <section id="experience" class="section">
@@ -151,109 +154,84 @@
       <ol class="timeline">
 
         <!-- VNPT-IT -->
-        <li class="tl-item">
-          <span class="tl-dot tl-dot--current" aria-hidden="true"></span>
-          <div class="tl-header">
-            <h3 class="tl-company">VNPT-IT</h3>
+        <li class="tl-item is-current">
+          <div class="tl-card">
             <time class="tl-period">09/2025 — 10/2026</time>
-          </div>
+            <h3 class="tl-company">VNPT-IT</h3>
 
-          <div class="tl-project">
-            <h4 class="tl-title">ONEBSS — Telecom Service Quality Control <span class="tl-role">· Software Engineer</span></h4>
-            <div class="stack">
-              <img src="assets/icons/spring.svg" alt="Spring Boot" title="Spring Boot" width="20" height="20" />
-              <img src="assets/icons/vuejs.svg" alt="Vue" title="Vue" width="20" height="20" />
-              <span class="stack-text">Microservices · OpenFeign · MinIO · WebSocket</span>
+            <div class="tl-project">
+              <h4 class="tl-title">ONEBSS <span class="tl-role">· Software Engineer</span></h4>
+              <p class="tl-summary">DDD microservices with optimistic locking and real-time WebSocket push.</p>
+              <div class="stack">
+                <img src="assets/icons/spring.svg" alt="Spring Boot" title="Spring Boot" width="20" height="20" />
+                <img src="assets/icons/vuejs.svg" alt="Vue" title="Vue" width="20" height="20" />
+                <span class="stack-text">OpenFeign · MinIO</span>
+              </div>
             </div>
-            <ul class="points">
-              <li>Built the backend for a core ERP domain with <strong>DDD</strong> and Spring Boot microservices, applying high-concurrency controls to guarantee data integrity.</li>
-              <li>Integrated <strong>MinIO</strong> object storage; inter-service communication via OpenFeign and REST.</li>
-              <li>Replaced frequent client polling with <strong>WebSockets</strong> for real-time push notifications.</li>
-              <li>Resolved race conditions and concurrent update conflicts with <strong>optimistic locking</strong>.</li>
-            </ul>
-          </div>
 
-          <div class="tl-project">
-            <h4 class="tl-title">EBILL — Customer Payment Management <span class="tl-role">· Software Developer</span></h4>
-            <div class="stack">
-              <img src="assets/icons/spring.svg" alt="Spring Boot" title="Spring Boot" width="20" height="20" />
-              <img src="assets/icons/oracle.svg" alt="Oracle" title="Oracle" width="20" height="20" />
-              <img src="assets/icons/hibernate.svg" alt="Hibernate" title="Hibernate" width="20" height="20" />
-              <img src="assets/icons/vuejs.svg" alt="Vue" title="Vue" width="20" height="20" />
-              <span class="stack-text">JasperReports</span>
+            <div class="tl-project">
+              <h4 class="tl-title">EBILL <span class="tl-role">· Software Developer</span></h4>
+              <p class="tl-summary">Customer payment management, consistent under high concurrency on Oracle.</p>
+              <div class="stack">
+                <img src="assets/icons/spring.svg" alt="Spring Boot" title="Spring Boot" width="20" height="20" />
+                <img src="assets/icons/oracle.svg" alt="Oracle" title="Oracle" width="20" height="20" />
+                <img src="assets/icons/hibernate.svg" alt="Hibernate" title="Hibernate" width="20" height="20" />
+                <img src="assets/icons/vuejs.svg" alt="Vue" title="Vue" width="20" height="20" />
+              </div>
             </div>
-            <ul class="points">
-              <li>Implemented account creation and password management with <strong>two-way encryption</strong>.</li>
-              <li>Optimized queries and kept transactions consistent under <strong>high concurrency</strong> with optimistic locking.</li>
-              <li>Normalized legacy procedures and APIs for province ID changes and module migration.</li>
-              <li>Built Excel import/export for bulk password reset; integrated QR-code service links via SMS.</li>
-            </ul>
           </div>
         </li>
 
         <!-- VNPT VinaPhone -->
         <li class="tl-item">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <div class="tl-header">
-            <h3 class="tl-company">VNPT VinaPhone (TTKD)</h3>
+          <div class="tl-card">
             <time class="tl-period">03/2024 — 09/2025</time>
-          </div>
+            <h3 class="tl-company">VNPT VinaPhone (TTKD)</h3>
 
-          <div class="tl-project">
-            <h4 class="tl-title">Report System <span class="tl-role">· Software Engineer</span></h4>
-            <div class="stack">
-              <img src="assets/icons/spring.svg" alt="Spring Boot" title="Spring Boot" width="20" height="20" />
-              <img src="assets/icons/oracle.svg" alt="Oracle" title="Oracle" width="20" height="20" />
-              <img src="assets/icons/rabbitmq.svg" alt="RabbitMQ" title="RabbitMQ" width="20" height="20" />
-              <img src="assets/icons/redis.svg" alt="Redis" title="Redis" width="20" height="20" />
-              <span class="stack-text">PL/SQL</span>
+            <div class="tl-project">
+              <h4 class="tl-title">Report System <span class="tl-role">· Software Engineer</span></h4>
+              <p class="tl-summary">Tuned PL/SQL for 1M-row reports; 100K-row bulk import with RabbitMQ offloading.</p>
+              <div class="stack">
+                <img src="assets/icons/spring.svg" alt="Spring Boot" title="Spring Boot" width="20" height="20" />
+                <img src="assets/icons/oracle.svg" alt="Oracle" title="Oracle" width="20" height="20" />
+                <img src="assets/icons/rabbitmq.svg" alt="RabbitMQ" title="RabbitMQ" width="20" height="20" />
+                <img src="assets/icons/redis.svg" alt="Redis" title="Redis" width="20" height="20" />
+              </div>
             </div>
-            <ul class="points">
-              <li>Refactored legacy PL/SQL: nested joins into <strong>CTEs</strong>, plus local indexes on sub-partition keys.</li>
-              <li>Bulk import/export up to <strong>100K records</strong> with batch processing and periodic Hibernate flush/clear for stable memory.</li>
-              <li>Cached completed results to avoid reprocessing <strong>1M-row monthly reports</strong>.</li>
-              <li>Enforced <strong>idempotency</strong> with DB unique constraints so retried imports never duplicate or overload downstream.</li>
-              <li>Offloaded heavy exports from the request thread with <strong>RabbitMQ</strong>.</li>
-            </ul>
           </div>
         </li>
 
         <!-- TMA Solutions -->
         <li class="tl-item">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <div class="tl-header">
-            <h3 class="tl-company">TMA Solutions</h3>
+          <div class="tl-card">
             <time class="tl-period">06/2023 — 01/2024</time>
-          </div>
+            <h3 class="tl-company">TMA Solutions</h3>
 
-          <div class="tl-project">
-            <h4 class="tl-title">Telecom Billing System <span class="tl-role">· Software Engineer</span></h4>
-            <div class="stack">
-              <img src="assets/icons/java.svg" alt="Java 8" title="Java 8" width="20" height="20" />
-              <img src="assets/icons/oracle.svg" alt="Oracle" title="Oracle" width="20" height="20" />
-              <img src="assets/icons/maven.svg" alt="Maven" title="Maven" width="20" height="20" />
-              <img src="assets/icons/react.svg" alt="React" title="React" width="20" height="20" />
-              <span class="stack-text">Spring JDBC</span>
+            <div class="tl-project">
+              <h4 class="tl-title">Telecom Billing <span class="tl-role">· Software Engineer</span></h4>
+              <p class="tl-summary">Spring JDBC billing engine in a Maven multi-module monorepo.</p>
+              <div class="stack">
+                <img src="assets/icons/java.svg" alt="Java 8" title="Java 8" width="20" height="20" />
+                <img src="assets/icons/oracle.svg" alt="Oracle" title="Oracle" width="20" height="20" />
+                <img src="assets/icons/maven.svg" alt="Maven" title="Maven" width="20" height="20" />
+                <img src="assets/icons/react.svg" alt="React" title="React" width="20" height="20" />
+              </div>
             </div>
-            <ul class="points">
-              <li>Built a mission-critical telecom billing system using <strong>Spring JDBC</strong> for high-performance data processing.</li>
-              <li>Designed a <strong>Maven multi-module</strong> monorepo isolating core logic, reporting engines and API layers.</li>
-              <li>Refactored legacy SQL to improve throughput over large historical data sets.</li>
-            </ul>
           </div>
         </li>
 
         <!-- Education -->
-        <li class="tl-item">
-          <span class="tl-dot tl-dot--muted" aria-hidden="true"></span>
-          <div class="tl-header">
-            <h3 class="tl-company">HCMC University of Technology and Education</h3>
+        <li class="tl-item is-muted">
+          <div class="tl-card">
             <time class="tl-period">04/2024</time>
+            <h3 class="tl-company">HCMC University of Technology and Education</h3>
+            <p class="tl-summary">B.Eng. Computer Engineering</p>
           </div>
-          <p class="tl-role">B.Eng. Computer Engineering</p>
         </li>
 
       </ol>
+
+      <p class="tl-note">Full details in the <a href="cv.pdf" download="VoTranVietAnh_Java_Developer_CV.pdf">CV ↓</a></p>
     </section>
 
     <!-- =========================================================
