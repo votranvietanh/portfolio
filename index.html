@@ -4,15 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vo Tran Viet Anh — Java Backend Developer</title>
-  <meta name="description" content="Portfolio of Vo Tran Viet Anh, Java Backend Developer focused on Spring Boot, microservices, high-concurrency and database performance." />
+  <meta name="description" content="Vo Tran Viet Anh — Java Backend Developer. Spring Boot, microservices, high-concurrency and Oracle performance." />
   <meta name="theme-color" content="#09090b" />
-
-  <!-- Open Graph (preview when sharing link) -->
   <meta property="og:title" content="Vo Tran Viet Anh — Java Backend Developer" />
   <meta property="og:description" content="Spring Boot · Microservices · High-concurrency · Oracle performance" />
   <meta property="og:type" content="website" />
-
-  <!-- Favicon (inline SVG, no extra file needed) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2309090b'/><text x='5' y='22' font-family='monospace' font-size='16' fill='%2310b981'>&gt;_</text></svg>" />
 
   <!-- Fonts -->
@@ -20,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- Apply saved theme BEFORE paint to avoid flash -->
+  <!-- Apply saved theme before paint (avoids flash) -->
   <script>
     (function () {
       try {
@@ -37,307 +33,269 @@
   <script>
     tailwind.config = {
       darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
-          },
-        },
-      },
+      theme: { extend: { fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+      } } },
     };
   </script>
-
-  <!-- Small custom styles -->
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
-<body class="bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 font-sans antialiased">
+<body class="bg-zinc-50 text-zinc-700 dark:bg-zinc-950 dark:text-zinc-400 font-sans antialiased">
 
   <!-- =========================================================
        NAVBAR
        ========================================================= -->
-  <header class="sticky top-0 z-40 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/80 dark:bg-zinc-950/80 backdrop-blur">
-    <nav class="mx-auto max-w-5xl px-4 sm:px-6 h-14 flex items-center justify-between">
-      <a href="#top" class="font-mono text-sm font-medium text-zinc-900 dark:text-zinc-100">
-        <span class="text-emerald-600 dark:text-emerald-400">~/</span>votranvietanh
-      </a>
+  <header class="sticky top-0 z-40 bg-zinc-50/85 dark:bg-zinc-950/85 backdrop-blur">
+    <nav class="mx-auto max-w-3xl px-4 sm:px-6 h-14 flex items-center justify-between">
+      <a href="#top" class="font-mono text-sm text-zinc-900 dark:text-zinc-100">votranvietanh</a>
 
-      <div class="flex items-center gap-1 sm:gap-2">
-        <ul class="hidden sm:flex items-center gap-1 text-sm">
-          <li><a href="#about" class="nav-link">about</a></li>
-          <li><a href="#skills" class="nav-link">skills</a></li>
-          <li><a href="#experience" class="nav-link">experience</a></li>
-          <li><a href="#contact" class="nav-link">contact</a></li>
+      <div class="flex items-center gap-1">
+        <ul class="hidden sm:flex items-center text-sm">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
 
-        <!-- Theme toggle -->
-        <button id="theme-toggle" type="button" aria-label="Toggle dark mode"
-          class="p-2 rounded-md text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/60 dark:hover:text-zinc-100 dark:hover:bg-zinc-800/60 transition">
-          <!-- sun (shown in dark mode) -->
-          <svg class="hidden dark:block w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/></svg>
-          <!-- moon (shown in light mode) -->
-          <svg class="block dark:hidden w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="icon-btn">
+          <svg class="hidden dark:block w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/></svg>
+          <svg class="block dark:hidden w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
 
-        <!-- Mobile menu button -->
-        <button id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
-          class="sm:hidden p-2 rounded-md text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/60 dark:hover:text-zinc-100 dark:hover:bg-zinc-800/60 transition">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <button id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" class="icon-btn sm:hidden">
+          <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </nav>
 
-    <!-- Mobile menu -->
-    <ul id="mobile-menu" class="hidden sm:hidden border-t border-zinc-200 dark:border-zinc-800 px-4 py-2 text-sm">
-      <li><a href="#about" class="mobile-link">about</a></li>
-      <li><a href="#skills" class="mobile-link">skills</a></li>
-      <li><a href="#experience" class="mobile-link">experience</a></li>
-      <li><a href="#contact" class="mobile-link">contact</a></li>
+    <ul id="mobile-menu" class="hidden sm:hidden px-4 pb-3 text-sm">
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#experience" class="mobile-link">Experience</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
     </ul>
   </header>
 
-  <main id="top" class="mx-auto max-w-5xl px-4 sm:px-6">
+  <main id="top" class="mx-auto max-w-3xl px-4 sm:px-6">
 
     <!-- =========================================================
-         HERO SECTION
-         Edit: name, title, tagline, CV link
+         HERO
+         Edit: name, title, tagline. CV file = cv.pdf
          ========================================================= -->
-    <section class="pt-20 pb-16 sm:pt-28 sm:pb-24">
-      <p class="font-mono text-sm text-emerald-600 dark:text-emerald-400 mb-4">
-        <span class="text-zinc-400 dark:text-zinc-500">$</span> whoami<span class="cursor">▍</span>
-      </p>
+    <section class="pt-16 pb-14 sm:pt-24 sm:pb-20">
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">Vo Tran Viet Anh</h1>
+      <p class="mt-2 font-mono text-sm text-emerald-600 dark:text-emerald-400">Java Backend Developer · Ho Chi Minh City</p>
 
-      <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-        Vo Tran Viet Anh
-      </h1>
-
-      <p class="mt-3 text-lg sm:text-xl font-medium text-zinc-600 dark:text-zinc-400">
-        Mid-Senior Java Backend Developer <span class="text-zinc-400 dark:text-zinc-600">·</span> Ho Chi Minh City
-      </p>
-
-      <p class="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed">
+      <p class="mt-6 max-w-xl leading-relaxed">
         I build backend systems that stay fast and correct under load —
-        <span class="text-zinc-900 dark:text-zinc-100 font-medium">microservices</span>,
-        <span class="text-zinc-900 dark:text-zinc-100 font-medium">high-concurrency workloads</span>, and
-        <span class="text-zinc-900 dark:text-zinc-100 font-medium">Oracle databases tuned for real traffic</span>.
+        microservices, high-concurrency workloads and Oracle databases tuned for real traffic.
       </p>
 
-      <div class="mt-10 flex flex-wrap items-center gap-3">
-        <!-- Download CV: to update, replace cv.pdf (keep the same file name) -->
-        <a href="cv.pdf" download="VoTranVietAnh_Java_Developer_CV.pdf"
-           class="inline-flex items-center gap-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 text-sm font-semibold shadow-sm shadow-emerald-900/20 transition">
+      <div class="mt-8 flex flex-wrap items-center gap-2">
+        <a href="cv.pdf" download="VoTranVietAnh_Java_Developer_CV.pdf" class="btn-primary">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
           Download CV
         </a>
-        <a href="#contact"
-           class="inline-flex items-center gap-2 rounded-lg border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 px-5 py-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100 transition">
-          Get in touch
+        <a href="https://github.com/votranvietanh" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub" title="GitHub">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/votranvietanhh" target="_blank" rel="noopener" class="icon-btn" aria-label="LinkedIn" title="LinkedIn">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:votranvietanh.work@gmail.com" class="icon-btn" aria-label="Email" title="Email">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
         </a>
       </div>
     </section>
 
     <!-- =========================================================
-         ABOUT ME
-         Edit: years of experience, summary, highlight stats
+         ABOUT
          ========================================================= -->
     <section id="about" class="section">
-      <h2 class="section-title"><span class="section-index">01.</span> About Me</h2>
-
-      <div class="grid gap-10 md:grid-cols-5">
-        <div class="md:col-span-3 space-y-4 leading-relaxed">
-          <p>
-            Software engineer with <strong class="text-zinc-900 dark:text-zinc-100">3+ years</strong> of experience in
-            Java backend development for telecom and billing systems at VNPT and TMA Solutions, with a strong focus on
-            Spring Boot and modern Java.
-          </p>
-          <p>
-            My core strengths are <strong class="text-zinc-900 dark:text-zinc-100">Spring Boot microservices</strong>
-            designed with DDD and event-driven patterns,
-            <strong class="text-zinc-900 dark:text-zinc-100">Oracle / PL/SQL performance tuning</strong> (CTE refactoring,
-            partition-aware indexing, batch processing) and
-            <strong class="text-zinc-900 dark:text-zinc-100">concurrency control</strong> — optimistic locking,
-            idempotency and queue-based offloading.
-          </p>
-        </div>
-
-        <dl class="md:col-span-2 grid grid-cols-2 gap-3 self-start">
-          <div class="stat"><dt>Experience</dt><dd>3+ yrs</dd></div>
-          <div class="stat"><dt>Companies</dt><dd>3</dd></div>
-          <div class="stat"><dt>Bulk import</dt><dd>100K rows</dd></div>
-          <div class="stat"><dt>Monthly reports</dt><dd>1M rows</dd></div>
-        </dl>
+      <h2 class="section-title">About</h2>
+      <div class="space-y-4 leading-relaxed">
+        <p>
+          Software engineer with <strong class="hl">3+ years</strong> of Java backend experience on telecom and billing
+          systems at VNPT and TMA Solutions.
+        </p>
+        <p>
+          I focus on <strong class="hl">Spring Boot microservices</strong> built with DDD and event-driven patterns,
+          <strong class="hl">Oracle / PL/SQL performance tuning</strong>, and
+          <strong class="hl">concurrency control</strong> — optimistic locking, idempotency and queue-based offloading.
+        </p>
       </div>
+
+      <dl class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-y-4">
+        <div><dd class="stat-num">3+</dd><dt class="stat-label">years experience</dt></div>
+        <div><dd class="stat-num">3</dd><dt class="stat-label">companies</dt></div>
+        <div><dd class="stat-num">100K</dd><dt class="stat-label">rows per bulk import</dt></div>
+        <div><dd class="stat-num">1M</dd><dt class="stat-label">rows monthly reports</dt></div>
+      </dl>
     </section>
 
     <!-- =========================================================
-         CORE TECHNICAL EXPERTISE
-         Edit: add/remove <li> tags inside each card
+         SKILLS
+         Icons live in assets/icons/*.svg (from devicon.dev).
+         Add one: <li class="tech"><img src="assets/icons/NAME.svg" alt="" /><span>Name</span></li>
+         Skills without an icon go in the <p class="tech-extra"> line.
          ========================================================= -->
     <section id="skills" class="section">
-      <h2 class="section-title"><span class="section-index">02.</span> Core Technical Expertise</h2>
+      <h2 class="section-title">Skills</h2>
 
-      <div class="grid gap-4 md:grid-cols-3">
-        <!-- Card: Languages & Frameworks -->
-        <article class="card">
-          <h3 class="card-title"><span class="font-mono text-emerald-600 dark:text-emerald-400">{ }</span> Languages &amp; Frameworks</h3>
-          <ul class="tag-list">
-            <li>Java</li>
-            <li>Spring Boot</li>
-            <li>Spring Data JPA</li>
-            <li>Hibernate</li>
-            <li>JDBC</li>
-            <li>OpenFeign</li>
-            <li>RESTful API</li>
-            <li>gRPC</li>
+      <div class="space-y-8">
+        <!-- Languages & Frameworks -->
+        <div>
+          <h3 class="group-label">Languages &amp; Frameworks</h3>
+          <ul class="tech-grid">
+            <li class="tech"><img src="assets/icons/java.svg" alt="" /><span>Java</span></li>
+            <li class="tech"><img src="assets/icons/spring.svg" alt="" /><span>Spring Boot</span></li>
+            <li class="tech"><img src="assets/icons/hibernate.svg" alt="" /><span>Hibernate</span></li>
+            <li class="tech"><img src="assets/icons/swagger.svg" alt="" /><span>Swagger</span></li>
           </ul>
-        </article>
+          <p class="tech-extra">JPA · REST API · gRPC · JDBC · OpenFeign</p>
+        </div>
 
-        <!-- Card: Databases & Caching -->
-        <article class="card">
-          <h3 class="card-title"><span class="font-mono text-emerald-600 dark:text-emerald-400">[≡]</span> Databases &amp; Caching</h3>
-          <ul class="tag-list">
-            <li>Oracle Database</li>
-            <li>PL/SQL</li>
-            <li>PostgreSQL</li>
-            <li>MySQL</li>
-            <li>Redis</li>
-            <li>MinIO</li>
+        <!-- Databases & Caching -->
+        <div>
+          <h3 class="group-label">Databases &amp; Caching</h3>
+          <ul class="tech-grid">
+            <li class="tech"><img src="assets/icons/oracle.svg" alt="" /><span>Oracle</span></li>
+            <li class="tech"><img src="assets/icons/postgresql.svg" alt="" /><span>PostgreSQL</span></li>
+            <li class="tech"><img src="assets/icons/mysql.svg" alt="" /><span>MySQL</span></li>
+            <li class="tech"><img src="assets/icons/redis.svg" alt="" /><span>Redis</span></li>
           </ul>
-        </article>
+          <p class="tech-extra">PL/SQL · MinIO</p>
+        </div>
 
-        <!-- Card: Architecture & Tools -->
-        <article class="card">
-          <h3 class="card-title"><span class="font-mono text-emerald-600 dark:text-emerald-400">&lt;/&gt;</span> Architecture &amp; Tools</h3>
-          <ul class="tag-list">
-            <li>Microservices</li>
-            <li>Event-driven</li>
-            <li>DDD</li>
-            <li>Saga</li>
-            <li>Transactional Outbox</li>
-            <li>RabbitMQ</li>
-            <li>Docker</li>
-            <li>Git</li>
-            <li>CI/CD</li>
-            <li>Swagger / OpenAPI</li>
+        <!-- Architecture & Tools -->
+        <div>
+          <h3 class="group-label">Architecture &amp; Tools</h3>
+          <ul class="tech-grid">
+            <li class="tech"><img src="assets/icons/rabbitmq.svg" alt="" /><span>RabbitMQ</span></li>
+            <li class="tech"><img src="assets/icons/docker.svg" alt="" /><span>Docker</span></li>
+            <li class="tech"><img src="assets/icons/git.svg" alt="" /><span>Git</span></li>
+            <li class="tech"><img src="assets/icons/githubactions.svg" alt="" /><span>CI/CD</span></li>
+            <li class="tech"><img src="assets/icons/maven.svg" alt="" /><span>Maven</span></li>
           </ul>
-        </article>
+          <p class="tech-extra">Microservices · DDD · Event-driven · Saga · Transactional Outbox</p>
+        </div>
       </div>
     </section>
 
     <!-- =========================================================
          EXPERIENCE TIMELINE (newest on top)
-         Structure:
-           <li class="tl-item">            -> one company (node on the line)
-             <article class="tl-project">  -> one project / role inside it
-         Copy a block to add a company or a project.
+           <li class="tl-item">   -> one company (dot on the line)
+           <div class="tl-project"> -> one project inside it
+         Stack icons: <img src="assets/icons/NAME.svg" alt="Name" title="Name" />
          ========================================================= -->
     <section id="experience" class="section">
-      <h2 class="section-title"><span class="section-index">03.</span> Experience</h2>
+      <h2 class="section-title">Experience</h2>
 
       <ol class="timeline">
 
-        <!-- ===== Company: VNPT-IT ===== -->
+        <!-- VNPT-IT -->
         <li class="tl-item">
           <span class="tl-dot tl-dot--current" aria-hidden="true"></span>
-          <header class="tl-header">
+          <div class="tl-header">
             <h3 class="tl-company">VNPT-IT</h3>
             <time class="tl-period">09/2025 — 10/2026</time>
-          </header>
+          </div>
 
-          <div class="tl-projects">
-            <!-- Project: ONEBSS -->
-            <article class="tl-project">
-              <h4 class="project-name">ONEBSS — Telecom Service Quality Control</h4>
-              <p class="project-role">Software Engineer</p>
-              <ul class="project-stack">
-                <li>Spring Boot</li><li>Microservices</li><li>OpenFeign</li><li>RESTful API</li><li>MinIO</li><li>WebSocket</li><li>Vue</li>
-              </ul>
-              <ul class="project-points">
-                <li>Developed the backend for a core ERP domain following <strong>Domain-Driven Design</strong> with Spring Boot microservices, applying high-concurrency controls to guarantee data integrity.</li>
-                <li>Integrated <strong>MinIO</strong> object storage and enabled inter-service communication via OpenFeign and RESTful APIs.</li>
-                <li>Replaced frequent client-side polling from the Vue.js frontend with <strong>WebSockets</strong>, delivering real-time push notifications.</li>
-                <li>Resolved race conditions and concurrent update conflicts with <strong>optimistic locking</strong>.</li>
-              </ul>
-            </article>
+          <div class="tl-project">
+            <h4 class="tl-title">ONEBSS — Telecom Service Quality Control <span class="tl-role">· Software Engineer</span></h4>
+            <div class="stack">
+              <img src="assets/icons/spring.svg" alt="Spring Boot" title="Spring Boot" />
+              <img src="assets/icons/vuejs.svg" alt="Vue" title="Vue" />
+              <span class="stack-text">Microservices · OpenFeign · MinIO · WebSocket</span>
+            </div>
+            <ul class="points">
+              <li>Built the backend for a core ERP domain with <strong>DDD</strong> and Spring Boot microservices, applying high-concurrency controls to guarantee data integrity.</li>
+              <li>Integrated <strong>MinIO</strong> object storage; inter-service communication via OpenFeign and REST.</li>
+              <li>Replaced frequent client polling with <strong>WebSockets</strong> for real-time push notifications.</li>
+              <li>Resolved race conditions and concurrent update conflicts with <strong>optimistic locking</strong>.</li>
+            </ul>
+          </div>
 
-            <!-- Project: EBILL -->
-            <article class="tl-project">
-              <h4 class="project-name">EBILL — Customer Payment Management</h4>
-              <p class="project-role">Software Developer</p>
-              <ul class="project-stack">
-                <li>Spring Boot</li><li>Oracle</li><li>Hibernate</li><li>JasperReports</li><li>Vue</li>
-              </ul>
-              <ul class="project-points">
-                <li>Implemented user account creation and password management with <strong>two-way encryption</strong> for secure storage and retrieval.</li>
-                <li>Optimized queries and kept transactions consistent under <strong>high concurrency</strong> using optimistic locking.</li>
-                <li>Normalized legacy procedures and APIs to support province ID changes and module migration.</li>
-                <li>Built Excel import/export for bulk password reset and integrated service QR-code links delivered via SMS.</li>
-              </ul>
-            </article>
+          <div class="tl-project">
+            <h4 class="tl-title">EBILL — Customer Payment Management <span class="tl-role">· Software Developer</span></h4>
+            <div class="stack">
+              <img src="assets/icons/spring.svg" alt="Spring Boot" title="Spring Boot" />
+              <img src="assets/icons/oracle.svg" alt="Oracle" title="Oracle" />
+              <img src="assets/icons/hibernate.svg" alt="Hibernate" title="Hibernate" />
+              <img src="assets/icons/vuejs.svg" alt="Vue" title="Vue" />
+              <span class="stack-text">JasperReports</span>
+            </div>
+            <ul class="points">
+              <li>Implemented account creation and password management with <strong>two-way encryption</strong>.</li>
+              <li>Optimized queries and kept transactions consistent under <strong>high concurrency</strong> with optimistic locking.</li>
+              <li>Normalized legacy procedures and APIs for province ID changes and module migration.</li>
+              <li>Built Excel import/export for bulk password reset; integrated QR-code service links via SMS.</li>
+            </ul>
           </div>
         </li>
 
-        <!-- ===== Company: VNPT VinaPhone (TTKD) ===== -->
+        <!-- VNPT VinaPhone -->
         <li class="tl-item">
           <span class="tl-dot" aria-hidden="true"></span>
-          <header class="tl-header">
+          <div class="tl-header">
             <h3 class="tl-company">VNPT VinaPhone (TTKD)</h3>
             <time class="tl-period">03/2024 — 09/2025</time>
-          </header>
+          </div>
 
-          <div class="tl-projects">
-            <!-- Project: Report System -->
-            <article class="tl-project">
-              <h4 class="project-name">Report System</h4>
-              <p class="project-role">Software Engineer</p>
-              <ul class="project-stack">
-                <li>Spring Boot</li><li>Oracle</li><li>PL/SQL</li><li>RabbitMQ</li><li>Redis</li>
-              </ul>
-              <ul class="project-points">
-                <li>Refactored legacy PL/SQL by restructuring deeply nested joins into <strong>CTEs</strong>, combined with local indexes on sub-partition keys.</li>
-                <li>Built bulk import/export for files up to <strong>100K records</strong> using batch processing with periodic Hibernate session flush/clear to keep memory stable.</li>
-                <li>Reduced redundant processing for <strong>1M-row monthly reports</strong> by caching completed results.</li>
-                <li>Enforced <strong>idempotency</strong> with database-level unique constraints so retried import requests never create duplicates or overload downstream processing.</li>
-                <li>Used <strong>RabbitMQ</strong> to offload heavy data exports from the request thread.</li>
-              </ul>
-            </article>
+          <div class="tl-project">
+            <h4 class="tl-title">Report System <span class="tl-role">· Software Engineer</span></h4>
+            <div class="stack">
+              <img src="assets/icons/spring.svg" alt="Spring Boot" title="Spring Boot" />
+              <img src="assets/icons/oracle.svg" alt="Oracle" title="Oracle" />
+              <img src="assets/icons/rabbitmq.svg" alt="RabbitMQ" title="RabbitMQ" />
+              <img src="assets/icons/redis.svg" alt="Redis" title="Redis" />
+              <span class="stack-text">PL/SQL</span>
+            </div>
+            <ul class="points">
+              <li>Refactored legacy PL/SQL: nested joins into <strong>CTEs</strong>, plus local indexes on sub-partition keys.</li>
+              <li>Bulk import/export up to <strong>100K records</strong> with batch processing and periodic Hibernate flush/clear for stable memory.</li>
+              <li>Cached completed results to avoid reprocessing <strong>1M-row monthly reports</strong>.</li>
+              <li>Enforced <strong>idempotency</strong> with DB unique constraints so retried imports never duplicate or overload downstream.</li>
+              <li>Offloaded heavy exports from the request thread with <strong>RabbitMQ</strong>.</li>
+            </ul>
           </div>
         </li>
 
-        <!-- ===== Company: TMA Solutions ===== -->
+        <!-- TMA Solutions -->
         <li class="tl-item">
           <span class="tl-dot" aria-hidden="true"></span>
-          <header class="tl-header">
+          <div class="tl-header">
             <h3 class="tl-company">TMA Solutions</h3>
             <time class="tl-period">06/2023 — 01/2024</time>
-          </header>
+          </div>
 
-          <div class="tl-projects">
-            <!-- Project: Telecom Billing -->
-            <article class="tl-project">
-              <h4 class="project-name">Telecom Billing System</h4>
-              <p class="project-role">Software Engineer</p>
-              <ul class="project-stack">
-                <li>Java 8</li><li>Spring JDBC</li><li>Oracle</li><li>Maven</li><li>React</li>
-              </ul>
-              <ul class="project-points">
-                <li>Built a mission-critical billing system for telecom services, using <strong>Spring JDBC</strong> for high-performance data processing.</li>
-                <li>Designed a <strong>Maven multi-module</strong> monorepo isolating core server logic, reporting engines and API layers.</li>
-                <li>Refactored legacy SQL queries and logic to improve throughput over large historical data sets.</li>
-              </ul>
-            </article>
+          <div class="tl-project">
+            <h4 class="tl-title">Telecom Billing System <span class="tl-role">· Software Engineer</span></h4>
+            <div class="stack">
+              <img src="assets/icons/java.svg" alt="Java 8" title="Java 8" />
+              <img src="assets/icons/oracle.svg" alt="Oracle" title="Oracle" />
+              <img src="assets/icons/maven.svg" alt="Maven" title="Maven" />
+              <img src="assets/icons/react.svg" alt="React" title="React" />
+              <span class="stack-text">Spring JDBC</span>
+            </div>
+            <ul class="points">
+              <li>Built a mission-critical telecom billing system using <strong>Spring JDBC</strong> for high-performance data processing.</li>
+              <li>Designed a <strong>Maven multi-module</strong> monorepo isolating core logic, reporting engines and API layers.</li>
+              <li>Refactored legacy SQL to improve throughput over large historical data sets.</li>
+            </ul>
           </div>
         </li>
 
-        <!-- ===== Education ===== -->
+        <!-- Education -->
         <li class="tl-item">
-          <span class="tl-dot tl-dot--edu" aria-hidden="true"></span>
-          <header class="tl-header">
+          <span class="tl-dot tl-dot--muted" aria-hidden="true"></span>
+          <div class="tl-header">
             <h3 class="tl-company">HCMC University of Technology and Education</h3>
-            <time class="tl-period">Graduated 04/2024</time>
-          </header>
-          <p class="project-role">Major: Computer Engineering</p>
+            <time class="tl-period">04/2024</time>
+          </div>
+          <p class="tl-role">B.Eng. Computer Engineering</p>
         </li>
 
       </ol>
@@ -345,47 +303,20 @@
   </main>
 
   <!-- =========================================================
-       FOOTER / CONTACT
-       Edit: email, GitHub, LinkedIn, phone
+       CONTACT
        ========================================================= -->
-  <footer id="contact" class="mt-16 border-t border-zinc-200 dark:border-zinc-800">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 py-16">
-      <h2 class="section-title"><span class="section-index">04.</span> Contact</h2>
-      <p class="max-w-xl mb-8">
-        Open to backend roles and interesting distributed-systems problems. The fastest way to reach me is email.
-      </p>
-
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li>
-          <a href="mailto:votranvietanh.work@gmail.com" class="contact-item">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            <span>votranvietanh.work@gmail.com</span>
-          </a>
-        </li>
-        <li>
-          <a href="tel:+84818247818" class="contact-item">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span>0818 247 818</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/votranvietanh" target="_blank" rel="noopener" class="contact-item">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
-            <span>github.com/votranvietanh</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/votranvietanhh" target="_blank" rel="noopener" class="contact-item">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-            <span>linkedin.com/in/votranvietanhh</span>
-          </a>
-        </li>
+  <footer id="contact" class="mx-auto max-w-3xl px-4 sm:px-6">
+    <section class="section">
+      <h2 class="section-title">Contact</h2>
+      <p class="mb-6">Open to backend roles. The fastest way to reach me is email.</p>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:votranvietanh.work@gmail.com">votranvietanh.work@gmail.com</a></li>
+        <li><span>Phone</span><a href="tel:+84818247818">0818 247 818</a></li>
+        <li><span>GitHub</span><a href="https://github.com/votranvietanh" target="_blank" rel="noopener">github.com/votranvietanh</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/votranvietanhh" target="_blank" rel="noopener">linkedin.com/in/votranvietanhh</a></li>
       </ul>
-
-      <p class="mt-16 font-mono text-xs text-zinc-500">
-        © <span id="year"></span> Vo Tran Viet Anh · Built with plain HTML &amp; Tailwind CSS · Hosted on GitHub Pages
-      </p>
-    </div>
+      <p class="mt-14 pb-10 font-mono text-xs text-zinc-400 dark:text-zinc-600">© <span id="year"></span> Vo Tran Viet Anh</p>
+    </section>
   </footer>
 
   <script src="assets/js/main.js"></script>
